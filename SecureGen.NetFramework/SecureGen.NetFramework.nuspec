@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>SecureGen.NetFramework</id>
+    <version>1.0</version>
+    <title>SecureGen.NetFramework</title>
+    <authors>Keen-Minds</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/larrytamnjong/SecureGen.NetFramework</projectUrl>
+    <description>A simple library implementation for SecureGen SDK for dot Net Framework</description>
+    <releaseNotes>A simple library implementation for SecureGen SDK for dot Net Framework</releaseNotes>
+    <copyright>Keen-Minds 2024</copyright>
+    <tags>SecuGen Finger Prints</tags>
+  </metadata>
+</package>
