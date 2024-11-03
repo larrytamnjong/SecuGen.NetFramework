@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SecureGen.NetFramework\SecureGen.NetFramework.csproj">
+      <Project>{1596d615-f3b6-433a-8b3a-5396ce8eb9f7}</Project>
+      <Name>SecureGen.NetFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
