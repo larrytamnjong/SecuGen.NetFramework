@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SecuGen.NetFramework")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A simple library implementation for SecuGen SDK for dot Net Framework")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Keen Minds")]
 [assembly: AssemblyProduct("SecuGen.NetFramework")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Keen Minds at work")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
