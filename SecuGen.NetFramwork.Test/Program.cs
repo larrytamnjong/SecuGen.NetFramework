@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SecuGen.NetFramework;
 
-namespace SecureGen.NetFramework.Test
+namespace SecuGen.NetFramwork.Test
 {
     internal class Program
     {
@@ -15,7 +16,7 @@ namespace SecureGen.NetFramework.Test
             ImageResponse finger2 = null;
 
 
-            var secureGenBiometrics = new SecureGenBiometrics();
+            var secureGenBiometrics = new SecuGenBiometrics();
             secureGenBiometrics.Enumerate();
             secureGenBiometrics.InitializeDevice();
 

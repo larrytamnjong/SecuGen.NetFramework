@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SecureGen.NetFramework")]
-[assembly: AssemblyDescription("A simple .NetFramework library for the SecuGen SDK")]
+[assembly: AssemblyTitle("SecuGen.NetFramework")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Keen-Minds")]
-[assembly: AssemblyProduct("SecureGen.NetFramework")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SecuGen.NetFramework")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1596d615-f3b6-433a-8b3a-5396ce8eb9f7")]
+[assembly: Guid("9f833c80-fd75-4e5b-91ee-2172955ffe29")]
 
 // Version information for an assembly consists of the following four values:
 //

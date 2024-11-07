@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecureGen.NetFramework
+namespace SecuGen.NetFramework
 {
-    public class SecureGenBiometrics:ISecureGenBiometrics
+    public class SecuGenBiometrics : ISecuGenBiometrics
     {
         private SGFingerPrintManager FingerPrintManager;
 
@@ -20,7 +20,7 @@ namespace SecureGen.NetFramework
         /// </summary>
         public List<string> EnumeratedDeviceList { get; set; } = new List<string>();
 
-        public SecureGenBiometrics()
+        public SecuGenBiometrics()
         {
             FingerPrintManager = new SGFingerPrintManager();
             Enumerate();
@@ -106,7 +106,7 @@ namespace SecureGen.NetFramework
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception">Throws Exception if Capture Image fails</exception>
-        public  ImageResponse CaptureImage()
+        public ImageResponse CaptureImage()
         {
             ImageResponse image = new ImageResponse();
 
@@ -163,7 +163,7 @@ namespace SecureGen.NetFramework
         /// <param name="baseMatchImageTemplate">Match template of image to verify</param>
         /// <param name="targetMatchImageTemplate">Match template image to verify</param>
         /// <returns>True if successful else it return false</returns>
-        public  bool VerifyImage(Byte[] baseMatchImageTemplate, Byte[] targetMatchImageTemplate)
+        public bool VerifyImage(Byte[] baseMatchImageTemplate, Byte[] targetMatchImageTemplate)
         {
             Int32 iError;
             bool matched = false;

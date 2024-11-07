@@ -1,13 +1,12 @@
-﻿using SecuGen.FDxSDKPro.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecureGen.NetFramework
+namespace SecuGen.NetFramework
 {
-    public interface ISecureGenBiometrics
+    public interface ISecuGenBiometrics
     {
         List<string> EnumeratedDeviceList { get; set; }
         List<string> Enumerate();
