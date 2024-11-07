@@ -1,2 +1,2 @@
 # SecureGen.NetFramework
-A simple library implementation for SecureGen SDK for dot Net Framework
+A simple library implementation for SecuGen SDK for dot Net Framework
