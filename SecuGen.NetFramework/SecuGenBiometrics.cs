@@ -11,8 +11,8 @@ namespace SecuGen.NetFramework
     {
         private SGFingerPrintManager FingerPrintManager;
 
-        public static int ImageWidth = 200;
-        public static int ImageHeight = 300;
+        public Int32 ImageWidth { get; set; }
+        public Int32 ImageHeight { get; set; }
         private SGFPMDeviceList[] DeviceList;
 
         /// <summary>
@@ -91,8 +91,24 @@ namespace SecuGen.NetFramework
 
         private Int32 OpenDevice(SGFPMDeviceName device_name, Int32 device_id)
         {
+            SGFPMDeviceInfoParam pInfo = new SGFPMDeviceInfoParam();
+
             Int32 iError = FingerPrintManager.Init(device_name);
             iError = FingerPrintManager.OpenDevice(device_id);
+
+            iError = FingerPrintManager.GetDeviceInfo(pInfo);
+
+            if (iError == (Int32)SGFPMError.ERROR_NONE)
+            {
+                ImageWidth = pInfo.ImageWidth;
+                ImageHeight = pInfo.ImageHeight;
+            }
+            else
+            {
+                throw new Exception(GetErrorMessage(iError));
+
+            }
+
             return iError;
         }
 
@@ -110,21 +126,36 @@ namespace SecuGen.NetFramework
         {
             ImageResponse image = new ImageResponse();
 
+
+            Byte[] rawImage;
+            Int32 imageQuality = 0;
             Int32 iError;
 
-            image.RawImage = new Byte[ImageWidth * ImageHeight];
+            Byte[] template = new Byte[400];
+            rawImage = new Byte[ImageWidth * ImageHeight];
 
-            iError = FingerPrintManager.GetImage(image.RawImage);
-            FingerPrintManager.GetImageQuality(ImageWidth, ImageHeight, image.RawImage, ref image.ImageQuality);
+            iError = FingerPrintManager.GetImage(rawImage);
+
+            FingerPrintManager.GetImageQuality(ImageWidth, ImageHeight, rawImage, ref imageQuality);
 
             if (iError == (Int32)SGFPMError.ERROR_NONE)
             {
-                iError = FingerPrintManager.CreateTemplate(image.RawImage, image.MatchImageTemplate);
+                iError = FingerPrintManager.CreateTemplate(null, rawImage, template);
 
                 if (iError == (Int32)SGFPMError.ERROR_NONE)
+                {
+                    image.RawImage = rawImage;
+                    image.ImageQuality = imageQuality;
+                    image.MatchImageTemplate = template;
+
                     return image;
+                }
+
                 else
+                {
                     throw new Exception(GetErrorMessage(iError));
+
+                }
             }
             else
             {
@@ -163,7 +194,7 @@ namespace SecuGen.NetFramework
         /// <param name="baseMatchImageTemplate">Match template of image to verify</param>
         /// <param name="targetMatchImageTemplate">Match template image to verify</param>
         /// <returns>True if successful else it return false</returns>
-        public bool VerifyImage(Byte[] baseMatchImageTemplate, Byte[] targetMatchImageTemplate)
+        public  bool VerifyImage(Byte[] baseMatchImageTemplate, Byte[] targetMatchImageTemplate)
         {
             Int32 iError;
             bool matched = false;
